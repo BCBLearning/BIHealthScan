@@ -114,8 +114,7 @@ BIHealthScan/
 
 Or use androidIDE Build menu.
 
-### Install APK (if provided)
-
+### Install APK 
 Download the latest release APK from the **Releases** section.
 https://github.com/BCBLearning/BIHealthScan/releases/download/V1.0.0/app-debug.1.apk
 ---
