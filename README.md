@@ -1,128 +1,177 @@
 # BIHealthScan
 
-Une application Android intelligente d’aide à l’analyse biologique utilisant **IA embarquée**, **TensorFlow Lite**, et une interface Material Design moderne. BIHealthScan offre une analyse locale, rapide et sécurisée, optimisée pour les smartphones ARM.
+BIHealthScan is an intelligent mobile health‑scanning application designed to accelerate triage, optimize patient record management, and deliver AI‑assisted medical analysis. It is developed by **BesmaInfo** within the BISmart innovation ecosystem.
 
 ---
 
-## 🚀 Fonctionnalités principales
+## 1. Overview
 
-* Analyse d’images biomédicales via **modèles IA embarqués**.
-* Optimisation ARM : **NEON SIMD**, **AArch64**, **quantized INT8**.
-* Gestion des patients, historique, et préférences locales.
-* Interface Material Design 3 moderne.
-* Fonctionne totalement hors ligne.
+BIHealthScan leverages advanced image processing, on‑device machine learning (TensorFlow Lite), and modern Android development (Material Design 3, MVVM, ViewBinding) to provide:
 
----
-
-## 📱 Installation (APK)
-
-Téléchargez la dernière version stable de l’application :
-
-**→ Lien APK (à insérer)**
-
-Installez ensuite le fichier depuis votre smartphone Android.
+* AI‑assisted medical scan analysis
+* Patient history and record management
+* Local or cloud‑based data storage (Firebase optional)
+* Modern, responsive UI/UX
+* Offline‑first architecture
 
 ---
 
-## 🎥 Démonstration Vidéo
+## 2. Key Features
 
-Une courte vidéo montrant l’analyse en temps réel et les principales fonctionnalités.
-
-**→ Lien vidéo (YouTube ou MP4) à insérer**
-
----
-
-## 🏗️ Architecture Technique
-
-```
-┌───────────────────────────────────────────────┐
-│                BIHEALTHSCAN APP               │
-├───────────────────────────────────────────────┤
-│ Presentation Layer │ Business Logic │ Data Layer │
-│ • Fragments/UI     │ • AI Engine    │ • Local DB │
-│ • Material 3        │ • Health Logic │ • SharedPrefs │
-│ • CameraX           │ • Processing   │ • Filesystem  │
-└─────────────┬───────────────────────────┬────────────┘
-              │                           │
-       ┌──────▼─────────┐         ┌────────▼────────┐
-       │ TensorFlow Lite │         │ ARM Optimized    │
-       │ • INT8 Models   │         │ • NEON SIMD      │
-       │ • On-Device AI  │         │ • AArch64 Native │
-       │ • Fast Runtime  │         │ • Cortex Optim.  │
-       └─────────────────┘         └───────────────────┘
-```
+* **AI Scan Engine** powered by TensorFlow Lite
+* **Patient History & Medical Records**
+* **Emergency Contact & Triage Workflow**
+* **Fast Search and Filtering**
+* **Dark/Light Theme (Material3)**
+* **Secure MVVM Architecture**
 
 ---
 
-## 🖼️ Screenshots
+## 3. Technology Stack
 
-Les captures sont automatiquement générées depuis le dossier `/documentation/screenshots/`.
+* **Language:** Java (Android)
+* **UI Framework:** Material Design 3
+* **Architecture:** MVVM + ViewBinding / DataBinding
+* **AI Engine:** TensorFlow Lite (INT8 quantized models)
+* **Database:** Room Database / Firebase
+* **Build System:** Gradle
 
-<div align="center">
+---
 
-<!-- Images auto-générées -->
+## 4. Screenshots
 
-<img src="documentation/screenshots/screenshot1.png" width="320"> <img src="documentation/screenshots/screenshot2.png" width="320"><br> <img src="documentation/screenshots/screenshot3.png" width="320"> <img src="documentation/screenshots/screenshot4.png" width="320"><br> <img src="documentation/screenshots/screenshot5.png" width="320"> <img src="documentation/screenshots/screenshot6.png" width="320">
-
+<div style="display:flex; flex-wrap:wrap; gap:16px;">
+  <div><strong>Scan</strong><br><img src="documentation/screenshots/scan.jpg" width="260" /></div>
+  <div><strong>Heart Rate</strong><br><img src="documentation/screenshots/heart.jpg" width="260" /></div>
+  <div><strong>Heart Result</strong><br><img src="documentation/screenshots/heart_result.jpg" width="260" /></div>
+  <div><strong>History</strong><br><img src="documentation/screenshots/history.jpg" width="260" /></div>
+  <div><strong>Info</strong><br><img src="documentation/screenshots/info.jpg" width="260" /></div>
+  <div><strong>Settings</strong><br><img src="documentation/screenshots/settings.jpg" width="260" /></div>
 </div>
 
 ---
 
-## 🛠️ Technologies utilisées
+## 5. System Architecture
 
-* **Android (Java)**
-* **TensorFlow Lite** (modèles quantifiés + runtime optimisé)
-* **Material Design 3 (M3)**
-* **CameraX** pour capture d’images
-* **Room / SharedPreferences**
-* **Optimisations ARM NEON**
+```
+┌────────────────────────────────────────────────────────────┐
+│                        BIHEALTHSCAN APP                    │
+├────────────────────────────────────────────────────────────┤
+│ Presentation Layer    │ Business Logic       │ Data Layer  │
+│ • Activities/Fragments│ • AI Analysis Engine │ • Room DB   │
+│ • Material 3 UI       │ • Health Logic       │• Preferences│
+│ • Camera Integration  │ • Config Mgmt        │• Cloud Sync │
+└───────────────┬───────────────┬────────────────────────────┘
+                │               │
+      ┌─────────▼──────────┐   ┌─────────▼──────────┐
+      │   TensorFlow Lite  │   │   ARM NN Runtime   │
+      │   AI Inference     │   │ Optimized Execution│
+      │ • Quantized INT8   │   │ • NEON SIMD        │
+      │ • On‑device Models │   │ • AArch64 Native   │
+      └────────────────────┘   └────────────────────┘
+```
 
 ---
 
-## 📦 Pré-requis développeurs
+## 6. Project Structure
 
-* Android Studio Flamingo ou plus récent
-* SDK Android 34+
-* JDK 17
+```
+BIHealthScan/
+├── app/
+│   ├── src/main/
+│   │   ├── java/com/besmainfo/bihealthscan/
+│   │   │   ├── data/        # Data management
+│   │   │   ├── ml/          # TensorFlow Lite AI
+│   │   │   ├── ui/          # Activities & Fragments
+│   │   │   └── utils/       # Utilities
+│   │   ├── assets/          # AI model (.tflite)
+│   │   └── res/             # Android resources
+│   └── build.gradle.kts     # Build configuration
+│
+├── documentation/
+│   ├── screenshots/         # App screenshots
+│   ├── demo_video/          # Demo videos
+│   └── architecture_diagram/# Architecture diagrams
+│
+└── README.md
+```
+
+---
+
+## 7. Installation & Build
+
+### Requirements
+
+* androidIDE
+* Android SDK 34+
 * Gradle 8+
 
----
+### Build
 
-## 🔧 Build & Execution
-
-```bash
+```
 ./gradlew assembleDebug
 ```
 
-APK généré dans :
+Or use androidIDE Build menu.
+
+### Install APK (if provided)
+
+Download the latest release APK from the **Releases** section.
+
+---
+
+## 8. TensorFlow Lite Integration
+
+Place your model in:
 
 ```
-app/build/outputs/apk/debug/
+app/src/main/assets/model.tflite
+```
+
+Load it in Java:
+
+```java
+Interpreter tflite = new Interpreter(loadModelFile(context, "model.tflite"));
+```
+
+The AI logic is located under:
+
+```
+com.besmainfo.bihealthscan.ml
 ```
 
 ---
 
-## 🤝 Contributeurs & Communauté
+## 9. Firebase Integration (Optional)
 
-Projet open-source initié par **BesmaInfo**.
+Add your `google-services.json` in:
 
-Vous pouvez :
+```
+app/
+```
 
-* proposer des idées,
-* contribuer au code,
-* envoyer des modèles IA améliorés,
-* rejoindre l’équipe sur lablab.ai.
+Enable the plugin:
 
----
-
-## 📄 Licence
-
-MIT – libre utilisation et modification.
+```
+id("com.google.gms.google-services")
+```
 
 ---
 
-## 📢 Contact
+## 10. Contribution
 
-Développement & IA : **BesmaInfo / BCB Learning**
+Contributions, feature proposals, and improvements are welcome. Please follow Android clean‑architecture guidelines and commit standards.
 
-GitHub : [https://github.com/BCBLearning](https://github.com/BCBLearning)
+---
+
+## 11. License
+
+This project is under the BesmaInfo internal license. Contact the project owner for usage rights.
+
+---
+
+## 12. Contact
+
+* Team: **BesmaInfo**
+* GitHub: [https://github.com/BCBLearning](https://github.com/BCBLearning)
+* Lead Developer: @Tedj_Tedj
