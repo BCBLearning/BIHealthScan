@@ -259,7 +259,10 @@ Video Script Outline:
  
 B. Screenshots (Minimum 3)
  
-1. Main Interface - Show bottom navigation
+1. Main Interface - Show bottom navigation :
+[![Nom de l’image]([docum/screenshots/capture1.png](https://github.com/BCBLearning/BIHealthScan/blob/main/documentation/screenshots/scan.jpg))]
+
+
 2. Analysis in Progress - Camera + AI processing
 3. Results Screen - Diagnosis + recommendations
 4. History View - All past analyses
