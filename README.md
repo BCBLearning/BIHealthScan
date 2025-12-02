@@ -58,11 +58,11 @@ BIHealthScan leverages advanced image processing, on‑device machine learning (
 │                        BIHEALTHSCAN APP                    │
 ├────────────────────────────────────────────────────────────┤
 │ Presentation Layer    │ Business Logic       │ Data Layer  │
-│ • Activities/Fragments│ • AI Analysis Engine │ • Room DB   │
+│ • Activities/Fragments│ • AI Analysis Engine │• Room DB    │
 │ • Material 3 UI       │ • Health Logic       │• Preferences│
 │ • Camera Integration  │ • Config Mgmt        │• Cloud Sync │
-└───────────────┬───────────────┬────────────────────────────┘
-                │               │
+└───────────────┬────────────────────────┬───────────────────┘
+                │                        │
       ┌─────────▼──────────┐   ┌─────────▼──────────┐
       │   TensorFlow Lite  │   │   ARM NN Runtime   │
       │   AI Inference     │   │ Optimized Execution│
@@ -117,7 +117,7 @@ Or use androidIDE Build menu.
 ### Install APK (if provided)
 
 Download the latest release APK from the **Releases** section.
-
+https://github.com/BCBLearning/BIHealthScan/releases/download/V1.0.0/app-debug.1.apk
 ---
 
 ## 8. TensorFlow Lite Integration
